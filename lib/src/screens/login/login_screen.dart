@@ -1,6 +1,7 @@
+import 'package:demo_app/src/screens/forgot/forgot_screen.dart';
 import 'package:demo_app/src/screens/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
-
+import 'package:demo_app/utils/validators.dart';
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -105,6 +106,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
 
               SizedBox(height: 33),
+              
               TextField(
                 controller: passwd,
                 obscureText: _isPasswordVisible,
@@ -145,7 +147,10 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               TextButton(
                 onPressed: () {
-                  // Perform an action when the button is pressed
+                   Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => ForgotScreen()),
+                      );
                 },
                 style: const ButtonStyle(
                   overlayColor: WidgetStatePropertyAll(
@@ -170,70 +175,69 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
       bottomNavigationBar: SafeArea(
-  child: Padding(
-    padding: EdgeInsets.only(
-      bottom: MediaQuery.of(context).viewInsets.bottom,
-      left: 20,
-      right: 20,
-    ),
-    child: Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        ElevatedButton(
-          onPressed: () {},
-          style: ElevatedButton.styleFrom(
-            minimumSize: const Size(double.infinity, 52),
-            backgroundColor: const Color(0xff54A312),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
+        child: Padding(
+          padding: EdgeInsets.only(
+            bottom:keyboardHeight,
+            left: 20,
+            right: 20,
           ),
-          child: const Text(
-            'Log In',
-            style: TextStyle(
-              color: Colors.white,
-              fontFamily: 'Poppins',
-              fontSize: 15,
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              'Don’t have an account?',
-              style: TextStyle(
-                fontFamily: 'Poppins',
-                fontSize: 15,
-                fontWeight: FontWeight.w400,
-                color: Color(0xff60655C),
-              ),
-            ),
-            TextButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (_) => SignupScreen()),
-                );
-              },
-              child: const Text(
-                'SignUp',
-                style: TextStyle(
-                  fontFamily: 'Poppins',
-                  fontSize: 15,
-                  fontWeight: FontWeight.w700,
-                  color: Color(0xff3A3533),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(double.infinity, 52),
+                  backgroundColor: const Color(0xff54A312),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                child: const Text(
+                  'Log In',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'Poppins',
+                    fontSize: 15,
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
               ),
-            ),
-          ],
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Don’t have an account?',
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 15,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xff60655C),
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => SignupScreen()),
+                      );
+                    },
+                    child: const Text(
+                      'SignUp',
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                        color: Color(0xff3A3533),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
-      ],
-    ),
-  ),
-),
-
+      ),
     );
   }
 }
