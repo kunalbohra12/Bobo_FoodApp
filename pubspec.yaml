@@ -72,7 +72,9 @@ flutter:
     - lib/src/assets/facebook_icon.png
     - lib/src/assets/back_arrow.png
     - lib/src/assets/apple_icon.png
-
+    - lib/src/assets/user_img.png
+    - lib/src/assets/bg_image.png
+    - lib/src/assets/product_image.png
 
 
    

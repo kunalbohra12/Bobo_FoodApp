@@ -1,7 +1,7 @@
 import 'package:demo_app/src/screens/forgot/forgot_screen.dart';
 import 'package:demo_app/src/screens/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:demo_app/utils/validators.dart';
+// import 'package:demo_app/utils/validators.dart';
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 

@@ -1,3 +1,4 @@
+import 'package:demo_app/src/screens/home/home_screen.dart';
 import 'package:demo_app/src/screens/login/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -307,7 +308,7 @@ class _OnboardingscreenState extends State<Onboardingscreen> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => LoginScreen(),
+                                        builder: (context) => HomeScreen(),
                                       ),
                                     );
                                   },
